@@ -63,7 +63,7 @@ for font in soup.find_all("link"):
 
 # 复制所有其他文件
 for link in soup.find_all("link"):
-    if not link.get("rel") == ["stylesheet"]:
+    if link.get("rel") != ["stylesheet"]:
         file_url = link.get("href")
         if file_url and "." in file_url:
             file_extension = file_url.split(".")[-1]

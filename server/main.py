@@ -87,7 +87,7 @@ async def handle(doc_id):
 
 def file_task(doc_id: str):
     res = Docs.get_by_doc_id(doc_id=doc_id)
-    if res == None:
+    if res is None:
         return
 
     doc = Doc(doc_id=res['doc_id'], filename=res['doc_name'])
