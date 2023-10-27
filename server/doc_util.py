@@ -63,9 +63,9 @@ class Doc:
     def build_txt(self, doc_type: str):
         if doc_type == 'application/epub+zip':
             self.extract_epub()
-        if doc_type == 'application/pdf':
+        elif doc_type == 'application/pdf':
             self.extract_pdf()
-        if doc_type == 'text/plain' or doc_type == 'text/markdown':
+        if doc_type in {'text/plain', 'text/markdown'}:
             self.data_file = self.file_path
         if doc_type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
             self.extra_docx()

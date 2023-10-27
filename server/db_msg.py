@@ -9,10 +9,7 @@ class Msg:
         self.uid = uid
         self.doc_id = doc_id
         self.role = role
-        if role == 'chatdoc':
-            self.content = content.response
-        else:
-            self.content = content
+        self.content = content.response if role == 'chatdoc' else content
         self.create_at = create_at
 
         ts = calendar.timegm(time.gmtime())
